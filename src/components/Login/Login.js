@@ -7,6 +7,7 @@ import loginBgImg from '../../assets/images/login-bg-img.jpg';
 import './Login.css';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import axios from 'axios';
 
 const Login = () => {
 	const [email, setEmail] = useState('');
@@ -37,6 +38,17 @@ const Login = () => {
 		setLoading(true);
 		handleGoogleSignIn()
 			.then((result) => {
+				const userData = {
+					name: result.user.displayName,
+					email: result.user.email,
+					uid: result.user.uid,
+				};
+
+				const url = 'http://localhost:5000/api/users/createUser';
+				axios
+					.put(url, userData)
+					.then((res) => {})
+					.catch((err) => console.log(err));
 				history.push(location.state?.from || '/home');
 			})
 			.catch((error) => console.log(error.message))

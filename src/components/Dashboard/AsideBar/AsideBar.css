@@ -1,0 +1,38 @@
+.aside-bar-menu {
+	list-style: none;
+}
+.dashboard-aside {
+	background-color: white;
+}
+
+.aside-bar-menu li a {
+	width: 100%;
+	padding: 8px 12px;
+	display: block;
+	font-size: 18px;
+	font-weight: 700;
+	text-decoration: none;
+	transition: 0.3s;
+	color: black;
+}
+.aside-bar-menu li a:hover {
+	color: white !important;
+	background: linear-gradient(
+		90deg,
+		rgba(2, 0, 36, 1) 0%,
+		rgba(9, 9, 121, 1) 35%,
+		rgba(0, 212, 255, 1) 100%
+	);
+}
+.aside-item-active {
+	color: white !important;
+	background: linear-gradient(
+		90deg,
+		rgba(2, 0, 36, 1) 0%,
+		rgba(9, 9, 121, 1) 35%,
+		rgba(0, 212, 255, 1) 100%
+	);
+}
+.menubars {
+	cursor: pointer;
+}

@@ -6,6 +6,7 @@ import logo from '../../assets/images/logo-marketo.png';
 import registerBgImg from '../../assets/images/register-bg-img.jpg';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import axios from 'axios';
 
 const Register = () => {
 	const [name, setName] = useState('');
@@ -28,6 +29,16 @@ const Register = () => {
 		setLoading(true);
 		handleGoogleSignIn()
 			.then((result) => {
+				const userData = {
+					name: result.user.displayName,
+					email: result.user.email,
+					uid: result.user.uid,
+				};
+				const url = 'http://localhost:5000/api/users/createUser';
+				axios
+					.put(url, userData)
+					.then((res) => {})
+					.catch((err) => console.log(err));
 				history.push(location.state?.from || '/home');
 			})
 			.catch((error) => console.log(error.message))
@@ -67,6 +78,19 @@ const Register = () => {
 		}
 		handleEmailPasswordRegister(email, password, name)
 			.then((result) => {
+				const userData = {
+					name: result.user.displayName,
+					email: result.user.email,
+					uid: result.user.uid,
+				};
+				const url = 'http://localhost:5000/api/users/create';
+				axios
+					.post(url, userData)
+					.then((res) => {
+						console.log(res.data);
+					})
+					.catch((err) => console.log(err));
+
 				setUserName(name);
 				const LoginUser = result.user;
 				setUser(LoginUser);
