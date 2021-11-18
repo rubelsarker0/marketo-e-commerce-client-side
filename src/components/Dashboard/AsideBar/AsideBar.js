@@ -97,16 +97,6 @@ const AsideBar = ({ width }) => {
 						Manage Products
 					</NavLink>
 				</li>
-				<li>
-					<NavLink
-						className="d-flex align-items-center"
-						activeClassName="aside-item-active"
-						exact
-						to={`${url}/add-product`}
-					>
-						Add Product
-					</NavLink>
-				</li>
 
 				{/* </>
         )} */}

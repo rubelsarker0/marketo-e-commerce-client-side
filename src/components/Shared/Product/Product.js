@@ -27,7 +27,7 @@ const Product = () => {
 					</div>
 
 					<Link to={`/product/details/`}>
-						<Button variant="success" className="w-100">
+						<Button className=" generic-btn-color w-100 border-0">
 							<FontAwesomeIcon className=" me-2" icon={faLuggageCart} /> BUY NOW
 						</Button>
 					</Link>

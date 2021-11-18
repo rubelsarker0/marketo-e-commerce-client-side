@@ -51,14 +51,14 @@ const Navigation = () => {
 						{user ? (
 							<Button
 								onClick={logOut}
-								className="rounded generic-btn-color ms-auto me-2 px-5 fw-bold"
+								className="rounded generic-btn-color ms-auto me-2 px-5 fw-bold border-0"
 							>
 								Logout
 							</Button>
 						) : (
 							<Button
 								onClick={handleLoginClick}
-								className="rounded generic-btn-color ms-auto px-5 fw-bold"
+								className="rounded generic-btn-color ms-auto px-5 fw-bold border-0"
 							>
 								<FontAwesomeIcon
 									className="fa-1x me-3 text-white"
