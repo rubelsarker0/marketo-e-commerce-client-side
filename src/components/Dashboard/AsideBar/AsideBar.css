@@ -23,6 +23,7 @@
 		rgba(9, 9, 121, 1) 35%,
 		rgba(0, 212, 255, 1) 100%
 	);
+	border-radius: 5px;
 }
 .aside-item-active {
 	color: white !important;
@@ -32,6 +33,7 @@
 		rgba(9, 9, 121, 1) 35%,
 		rgba(0, 212, 255, 1) 100%
 	);
+	border-radius: 5px;
 }
 .menubars {
 	cursor: pointer;

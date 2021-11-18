@@ -27,7 +27,7 @@ const MakeAdmin = () => {
 	};
 
 	return (
-		<div className=" py-3">
+		<div className=" my-5">
 			<Col lg={7} xs={11} md={8} className="mx-auto">
 				<div className="card shadow-lg rounded py-3 px-3">
 					<h3 className=" text-center generic-text-color py-3">

@@ -4,25 +4,26 @@ import { faLuggageCart } from '@fortawesome/free-solid-svg-icons';
 import { Card, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Product.css';
-const Product = () => {
+const Product = (props) => {
+	const { _id, title, description, price, discountPrice, productImg } =
+		props.product;
+
 	return (
-		<Col>
-			<Card>
+		<Col className="py-2">
+			<Card className="h-100">
 				<img
-					className="w-100"
-					src="https://demo.xpeedstudio.com/marketov2/shoe/wp-content/uploads/sites/15/2018/10/1-min-300x300.jpg"
+					className="w-100 h-100"
+					src={productImg}
 					alt="Slip-On Formal Shoe"
+					// style={{ height: '450px' }}
 				/>
 				<Card.Body>
-					<span>casual shoe</span>
-					<h6 className="product-desc">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Exercitationem, modi.
-					</h6>
+					<span>{title}</span>
+					<h6 className="product-desc">{description}</h6>
 					<div className="price mb-1 d-flex">
-						<h6>$234 </h6>
+						<h6 className="text-danger">{`$${discountPrice}`} </h6>
 						<span className="text-decoration-line-through text-secondary ms-2">
-							$520
+							{`$${price}`}
 						</span>
 					</div>
 

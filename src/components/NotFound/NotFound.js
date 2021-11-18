@@ -14,7 +14,7 @@ const NotFound = () => {
 				<h1 className="regular-text-color mt-5">Page Not Found!</h1>
 				<Button
 					onClick={handleGoBack}
-					className="btn-login rounded-pill px-5 fw-bold 5 mt-3"
+					className="btn-login generic-btn-color border-0 rounded-pill px-5 fw-bold 5 mt-3"
 				>
 					Go back
 				</Button>

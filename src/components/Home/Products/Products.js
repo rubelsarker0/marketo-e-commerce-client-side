@@ -1,22 +1,42 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Product from '../../Shared/Product/Product';
-import { Row } from 'react-bootstrap';
+import { Row, Spinner } from 'react-bootstrap';
+import axios from 'axios';
+
 const Products = () => {
+	const [products, setProducts] = useState([]);
+	const [isLoading, setLoading] = useState(true);
+
+	useEffect(() => {
+		axios
+			.get('http://localhost:5000/api/products/all')
+			.then((res) => {
+				setProducts(res.data);
+				setLoading(false);
+			})
+			.catch((error) => console.log(error));
+	}, []);
+
+	if (isLoading) {
+		return (
+			<div className="text-center mx-auto py-5">
+				<Spinner animation="border" variant="primary" />
+			</div>
+		);
+	}
+
 	return (
-		<div>
+		<div className="pt-5">
 			<div className="text-center text-success">
-				<h1 className="generic-text-color pt-5">OUR FEATURE PRODUCT</h1>
+				<h1 className="generic-text-color fw-bold">OUR FEATURE PRODUCT</h1>
 				<p className="text-muted">
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum magnam
-					maxime totam, quis itaque voluptate accusantium odit, architecto
-					consequatur
+					We Provide world class shoes with high qualities and best price!!
 				</p>
 			</div>
-			<Row lg={4} md={3} xs={1} sm={2}>
-				<Product></Product>
-				<Product></Product>
-				<Product></Product>
-				<Product></Product>
+			<Row lg={4} md={3} xs={1} sm={2} className="py-5">
+				{products.slice(0, 8).map((product) => (
+					<Product key={product._id} product={product}></Product>
+				))}
 			</Row>
 		</div>
 	);
