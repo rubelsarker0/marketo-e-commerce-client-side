@@ -14,7 +14,10 @@ const AddProduct = () => {
 		e.preventDefault();
 		axios
 			.post('http://localhost:5000/api/products/create', productData)
-			.then((res) => console.log(res.data))
+			.then((res) => {
+				console.log(res.data);
+				e.target.reset();
+			})
 			.catch((err) => console.log(err.message));
 	};
 

@@ -72,7 +72,7 @@ const AsideBar = ({ width }) => {
 						className="d-flex align-items-center"
 						activeClassName="aside-item-active"
 						exact
-						to={`${url}/addNewProduct`}
+						to={`${url}/add-product`}
 					>
 						Add Product
 					</NavLink>
