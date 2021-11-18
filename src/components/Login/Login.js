@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { Col, Button, Container, Form, Row } from 'react-bootstrap';
 import logo from '../../assets/images/logo-marketo.png';
 import loginBgImg from '../../assets/images/login-bg-img.jpg';
@@ -13,12 +13,8 @@ const Login = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [error, setError] = useState('');
-	const {
-		handleGoogleSignIn,
-		handleGithubSignIn,
-		handleEmailPasswordLogin,
-		setLoading,
-	} = useAuth();
+	const { handleGoogleSignIn, handleEmailPasswordLogin, setLoading } =
+		useAuth();
 
 	const location = useLocation();
 	const history = useHistory();
@@ -52,15 +48,6 @@ const Login = () => {
 				history.push(location.state?.from || '/home');
 			})
 			.catch((error) => console.log(error.message))
-			.finally(() => setLoading(false));
-	};
-
-	const signInGithub = () => {
-		setLoading(true);
-		handleGithubSignIn()
-			.then((result) => {
-				history.push(location.state?.from || '/home');
-			})
 			.finally(() => setLoading(false));
 	};
 
@@ -114,43 +101,26 @@ const Login = () => {
 									className=" generic-btn-color border-0 w-100"
 									type="submit"
 								>
-									Log In
+									LOG IN
 								</Button>
 							</Form>
 							<div className="divider text-center my-3 fs-5">
 								<span className="divider-content">Or</span>
 							</div>
-							<Row lg={2} xs={1} className="g-3">
-								<Col>
-									<Button
-										onClick={signInGoogle}
-										variant="secondary"
-										className="w-100 text-white fw-bold"
-									>
-										<FontAwesomeIcon
-											className="fa-1x text-white me-2"
-											icon={faGoogle}
-										/>
-										Google Sign In
-									</Button>
-								</Col>
-								<Col>
-									<Button
-										// onClick={signInGithub}
-										variant="secondary"
-										className="w-100 fw-bold"
-									>
-										<FontAwesomeIcon
-											className="fa-1x text-white me-2"
-											icon={faGithub}
-										/>
-										Github Sign In
-									</Button>
-								</Col>
-							</Row>
-							<div className="text-center mt-3">
+							<Button
+								onClick={signInGoogle}
+								variant="secondary"
+								className="w-100 text-white fw-bold"
+							>
+								<FontAwesomeIcon
+									className="fa-1x text-white me-2"
+									icon={faGoogle}
+								/>
+								Google Sign In
+							</Button>
+							<div className="text-center fst-italic mt-3">
 								Don't have an account?
-								<Link to="/account/register">Register</Link>
+								<Link to="/account/register"> Register</Link>
 							</div>
 						</div>
 					</Col>

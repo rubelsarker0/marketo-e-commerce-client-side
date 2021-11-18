@@ -3,7 +3,7 @@ import { Switch, Link, useRouteMatch, Route } from 'react-router-dom';
 import AsideBar from './AsideBar/AsideBar';
 import DashboardHome from './DashboardHome/DashboardHome';
 import AddProduct from './AddProduct/AddProduct';
-import MakeReview from './MakeReview/MakeReview';
+import GiveReview from './GiveReview/GiveReview';
 import MakeAdmin from './MakeAdmin/MakeAdmin';
 import MyOrders from './MyOrders/MyOrders';
 import Payment from './Payment/Payment';
@@ -26,8 +26,8 @@ const Dashboard = () => {
 						<Route path={`${path}/payment`}>
 							<Payment></Payment>
 						</Route>
-						<Route path={`${path}/makeReview`}>
-							<MakeReview></MakeReview>
+						<Route path={`${path}/giveReview`}>
+							<GiveReview></GiveReview>
 						</Route>
 						<Route path={`${path}/add-product`}>
 							<AddProduct></AddProduct>

@@ -37,9 +37,9 @@ const AsideBar = ({ width }) => {
 						className="d-flex align-items-center"
 						activeClassName="aside-item-active"
 						exact
-						to={`${url}/makeReview`}
+						to={`${url}/giveReview`}
 					>
-						Make Review
+						Give Review
 					</NavLink>
 				</li>
 				<li>

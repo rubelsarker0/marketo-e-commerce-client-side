@@ -18,8 +18,8 @@ const Product = (props) => {
 					// style={{ height: '450px' }}
 				/>
 				<Card.Body>
-					<span>{title}</span>
-					<h6 className="product-desc">{description}</h6>
+					<span className="generic-text-color">{title}</span>
+					<h6 className="product-desc py-1">{description}</h6>
 					<div className="price mb-1 d-flex">
 						<h6 className="text-danger">{`$${discountPrice}`} </h6>
 						<span className="text-decoration-line-through text-secondary ms-2">

@@ -33,8 +33,8 @@ const Products = () => {
 					We Provide world class shoes with high qualities and best price!!
 				</p>
 			</div>
-			<Row lg={4} md={3} xs={1} sm={2} className="py-5">
-				{products.slice(0, 8).map((product) => (
+			<Row lg={3} md={3} xs={1} sm={2} className="py-5">
+				{products.slice(0, 6).map((product) => (
 					<Product key={product._id} product={product}></Product>
 				))}
 			</Row>

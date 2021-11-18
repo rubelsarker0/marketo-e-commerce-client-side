@@ -33,7 +33,7 @@ const AddProduct = () => {
 						<Form.Control
 							type="text"
 							name="title"
-							placeholder="title"
+							placeholder="Title"
 							onChange={handleChange}
 						/>
 					</Form.Group>
