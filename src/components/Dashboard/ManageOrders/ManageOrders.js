@@ -37,7 +37,14 @@ const ManageOrders = () => {
 				<h1 className=" text-center generic-text-color py-3 fw-bolder">
 					MANAGE ORDERS
 				</h1>
-				<Table className="rounded-3" striped bordered hover variant="light">
+				<Table
+					responsive
+					className="rounded-3"
+					striped
+					bordered
+					hover
+					variant="light"
+				>
 					<thead>
 						<tr>
 							<th>Customer Name</th>

@@ -39,7 +39,7 @@ const Dashboard = () => {
 					<Offcanvas.Header closeButton={true}>
 						<div className="mt-2 fs-2 ms-2 fw-bold ">
 							<Link to="/home" className="text-decoration-none">
-								<span className="text-warning fs-3">Markto</span>
+								<span className="generic-text-color fw-bolder">Markto</span>
 							</Link>
 						</div>
 					</Offcanvas.Header>
