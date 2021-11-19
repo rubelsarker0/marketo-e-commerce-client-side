@@ -6,6 +6,7 @@ import useAuth from '../../../hooks/useAuth';
 const MyOrders = () => {
 	const [customerOrders, setCustomerOrders] = useState([]);
 	const { user } = useAuth();
+	const [isUpdate, setIsUpdate] = useState(false);
 
 	const loadCustomerOrder = () => {
 		axios
@@ -18,7 +19,21 @@ const MyOrders = () => {
 
 	useEffect(() => {
 		loadCustomerOrder();
-	}, []);
+	}, [isUpdate]);
+
+	const handleCancel = (id) => {
+		const confirm = window.confirm('Are you sure want to cancel order');
+		if (confirm) {
+			const url = `http://localhost:5000/api/order/update/Cancel/${id}`;
+			axios
+				.put(url)
+				.then((res) => {
+					setIsUpdate(!isUpdate);
+					console.log(res.data);
+				})
+				.catch((err) => console.log(err));
+		}
+	};
 
 	console.log(customerOrders);
 
@@ -49,7 +64,13 @@ const MyOrders = () => {
 									<td>{order.product.price}</td>
 									<td>{order.status}</td>
 									<td>
-										<button className="btn btn-danger w-75">Cancel</button>
+										<button
+											onClick={() => handleCancel(order._id)}
+											className="btn btn-danger w-75"
+											disabled={order.status === 'Cancel'}
+										>
+											Cancel
+										</button>
 									</td>
 								</tr>
 							</>

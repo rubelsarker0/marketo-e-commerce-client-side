@@ -1,13 +1,15 @@
 import React from 'react';
 import { NavLink, useRouteMatch } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 import './AsideBar.css';
 const AsideBar = ({ width }) => {
+	const { databaseUser, logOut } = useAuth();
 	let { path, url } = useRouteMatch();
 
 	return (
 		<div
 			style={{ width: `${width}` }}
-			className={`vh-100 bg-white dashboard-aside`}
+			className={`vh-100 bg-white dashboard-aside position-relative`}
 		>
 			<ul className="aside-bar-menu p-0  mt-3">
 				<li>
@@ -20,86 +22,103 @@ const AsideBar = ({ width }) => {
 						Home
 					</NavLink>
 				</li>
-				{/* {!databaseUser?.role && (
-          <> */}
+				{!databaseUser?.role && (
+					<>
+						<li>
+							<NavLink
+								className="d-flex align-items-center"
+								activeClassName="aside-item-active"
+								exact
+								to={`${url}`}
+							>
+								Dashboard
+							</NavLink>
+						</li>
+						<li>
+							<NavLink
+								className="d-flex align-items-center"
+								activeClassName="aside-item-active"
+								exact
+								to={`${url}/giveReview`}
+							>
+								Give Review
+							</NavLink>
+						</li>
+						<li>
+							<NavLink
+								className="d-flex align-items-center"
+								activeClassName="aside-item-active"
+								exact
+								to={`${url}/myOrders`}
+							>
+								My Orders
+							</NavLink>
+						</li>
+						<li>
+							<NavLink
+								className="d-flex align-items-center"
+								activeClassName="aside-item-active"
+								exact
+								to={`${url}/payment`}
+							>
+								Payment
+							</NavLink>
+						</li>
+					</>
+				)}
+				{databaseUser?.role === 'admin' && (
+					<>
+						<li>
+							<NavLink
+								className="d-flex align-items-center"
+								activeClassName="aside-item-active"
+								exact
+								to={`${url}/manage-orders`}
+							>
+								Manage Orders
+							</NavLink>
+						</li>
+						<li>
+							<NavLink
+								className="d-flex align-items-center"
+								activeClassName="aside-item-active"
+								exact
+								to={`${url}/add-product`}
+							>
+								Add Product
+							</NavLink>
+						</li>
+						<li>
+							<NavLink
+								className="d-flex align-items-center"
+								activeClassName="aside-item-active"
+								exact
+								to={`${url}/make-admin`}
+							>
+								Make Admin
+							</NavLink>
+						</li>
+						<li>
+							<NavLink
+								className="d-flex align-items-center"
+								activeClassName="aside-item-active"
+								exact
+								to={`${url}/manage-products`}
+							>
+								Manage Products
+							</NavLink>
+						</li>
+					</>
+				)}
 				<li>
-					<NavLink
-						className="d-flex align-items-center"
-						activeClassName="aside-item-active"
-						exact
-						to={`${url}`}
+					<button
+						style={{ bottom: '200px' }}
+						className="w-80 btn generic-btn-color text-white border-0 position-absolute d-flex align-items-center dashboard-logout mb-3 ms-3 fw-bold fs-5"
+						onClick={logOut}
 					>
-						Dashboard
-					</NavLink>
+						LOG OUT
+					</button>
 				</li>
-				<li>
-					<NavLink
-						className="d-flex align-items-center"
-						activeClassName="aside-item-active"
-						exact
-						to={`${url}/giveReview`}
-					>
-						Give Review
-					</NavLink>
-				</li>
-				<li>
-					<NavLink
-						className="d-flex align-items-center"
-						activeClassName="aside-item-active"
-						exact
-						to={`${url}/myOrders`}
-					>
-						My Orders
-					</NavLink>
-				</li>
-
-				{/* </>
-        )} */}
-				{/* {databaseUser?.role === "admin" && (
-          <> */}
-				<li>
-					<NavLink
-						className="d-flex align-items-center"
-						activeClassName="aside-item-active"
-						exact
-						to={`${url}/manageOrders`}
-					>
-						Manage Orders
-					</NavLink>
-				</li>
-				<li>
-					<NavLink
-						className="d-flex align-items-center"
-						activeClassName="aside-item-active"
-						exact
-						to={`${url}/add-product`}
-					>
-						Add Product
-					</NavLink>
-				</li>
-				<li>
-					<NavLink
-						className="d-flex align-items-center"
-						activeClassName="aside-item-active"
-						exact
-						to={`${url}/make-admin`}
-					>
-						Make Admin
-					</NavLink>
-				</li>
-				<li>
-					<NavLink
-						className="d-flex align-items-center"
-						activeClassName="aside-item-active"
-						exact
-						to={`${url}/manageProducts`}
-					>
-						Manage Products
-					</NavLink>
-				</li>
-
-				{/* </>
-        )} */}
 			</ul>
 		</div>
 	);

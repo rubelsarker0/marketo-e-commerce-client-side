@@ -8,6 +8,8 @@ import MakeAdmin from './MakeAdmin/MakeAdmin';
 import MyOrders from './MyOrders/MyOrders';
 import Payment from './Payment/Payment';
 import AdminRoute from './AdminRoute/AdminRoute';
+import ManageOrders from './ManageOrders/ManageOrders';
+import ManageProducts from './ManageProducts/ManageProducts';
 const Dashboard = () => {
 	let { path, url } = useRouteMatch();
 
@@ -35,6 +37,12 @@ const Dashboard = () => {
 						</AdminRoute>
 						<AdminRoute path={`${path}/make-admin`}>
 							<MakeAdmin></MakeAdmin>
+						</AdminRoute>
+						<AdminRoute path={`${path}/manage-orders`}>
+							<ManageOrders></ManageOrders>
+						</AdminRoute>
+						<AdminRoute path={`${path}/manage-products`}>
+							<ManageProducts></ManageProducts>
 						</AdminRoute>
 						{/* <AdminRoute path={`${path}/manageOrders`}>
               <ManageOrders></ManageOrders>
