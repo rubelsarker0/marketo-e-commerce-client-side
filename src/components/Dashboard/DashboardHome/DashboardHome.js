@@ -50,7 +50,7 @@ const DashboardHome = () => {
 							</p>
 							<Button
 								onClick={handleContact}
-								className="generic-btn-color rounded px-5"
+								className="generic-btn-color rounded border-0 px-5"
 								size="lg"
 							>
 								EXPLORE SHOES

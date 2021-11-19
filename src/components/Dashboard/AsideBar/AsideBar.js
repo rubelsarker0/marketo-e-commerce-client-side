@@ -2,18 +2,19 @@ import React from 'react';
 import { NavLink, useRouteMatch } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import './AsideBar.css';
-const AsideBar = ({ width }) => {
+const AsideBar = ({ width, className, handleClose }) => {
 	const { databaseUser, logOut } = useAuth();
 	let { path, url } = useRouteMatch();
 
 	return (
 		<div
 			style={{ width: `${width}` }}
-			className={`vh-100 bg-white dashboard-aside position-relative`}
+			className={`vh-100 bg-white dashboard-aside ${className} position-relative`}
 		>
 			<ul className="aside-bar-menu p-0  mt-3">
 				<li>
 					<NavLink
+						onClick={handleClose}
 						className="d-flex align-items-center"
 						activeClassName="aside-item-active"
 						exact
@@ -26,6 +27,7 @@ const AsideBar = ({ width }) => {
 					<>
 						<li>
 							<NavLink
+								onClick={handleClose}
 								className="d-flex align-items-center"
 								activeClassName="aside-item-active"
 								exact
@@ -36,6 +38,7 @@ const AsideBar = ({ width }) => {
 						</li>
 						<li>
 							<NavLink
+								onClick={handleClose}
 								className="d-flex align-items-center"
 								activeClassName="aside-item-active"
 								exact
@@ -46,6 +49,7 @@ const AsideBar = ({ width }) => {
 						</li>
 						<li>
 							<NavLink
+								onClick={handleClose}
 								className="d-flex align-items-center"
 								activeClassName="aside-item-active"
 								exact
@@ -56,6 +60,7 @@ const AsideBar = ({ width }) => {
 						</li>
 						<li>
 							<NavLink
+								onClick={handleClose}
 								className="d-flex align-items-center"
 								activeClassName="aside-item-active"
 								exact
@@ -70,6 +75,7 @@ const AsideBar = ({ width }) => {
 					<>
 						<li>
 							<NavLink
+								onClick={handleClose}
 								className="d-flex align-items-center"
 								activeClassName="aside-item-active"
 								exact
@@ -80,6 +86,7 @@ const AsideBar = ({ width }) => {
 						</li>
 						<li>
 							<NavLink
+								onClick={handleClose}
 								className="d-flex align-items-center"
 								activeClassName="aside-item-active"
 								exact
@@ -90,6 +97,7 @@ const AsideBar = ({ width }) => {
 						</li>
 						<li>
 							<NavLink
+								onClick={handleClose}
 								className="d-flex align-items-center"
 								activeClassName="aside-item-active"
 								exact
@@ -100,6 +108,7 @@ const AsideBar = ({ width }) => {
 						</li>
 						<li>
 							<NavLink
+								onClick={handleClose}
 								className="d-flex align-items-center"
 								activeClassName="aside-item-active"
 								exact

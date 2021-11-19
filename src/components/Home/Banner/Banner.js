@@ -10,16 +10,24 @@ const Banner = () => {
 			<Carousel>
 				<Carousel.Item>
 					<img
-						className="d-block w-100 text-black"
+						className="d-block w-50 mx-auto text-black"
 						src={slideImg1}
 						alt="First slide"
 					/>
 				</Carousel.Item>
 				<Carousel.Item>
-					<img className="d-block w-100" src={slideImg2} alt="Second slide" />
+					<img
+						className="d-block w-50 mx-auto"
+						src={slideImg2}
+						alt="Second slide"
+					/>
 				</Carousel.Item>
 				<Carousel.Item>
-					<img className="d-block w-100" src={slideImg3} alt="Third slide" />
+					<img
+						className="d-block w-50 mx-auto"
+						src={slideImg3}
+						alt="Third slide"
+					/>
 				</Carousel.Item>
 			</Carousel>
 		</section>

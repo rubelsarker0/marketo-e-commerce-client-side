@@ -6,8 +6,8 @@ const ReviewCard = ({ review }) => {
 	const { rating, feedbackMessage, profile } = review;
 	return (
 		<>
-			<Col className="mb-5 mb-lg-0">
-				<Card className="shadow h-100 border-0 rounded-3">
+			<Col className="mb-5 mb-lg-0 mt-5">
+				<Card className="shadow h-100 pt-5 border-0 rounded-3">
 					<div className="text-center mt-5">
 						<div className="text-center d-flex justify-content-center">
 							<ReactStars
