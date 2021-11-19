@@ -53,6 +53,7 @@ const useFirebase = () => {
 	};
 
 	useEffect(() => {
+		setLoading(true);
 		onAuthStateChanged(auth, (user) => {
 			if (user) {
 				setUser(user);
@@ -65,13 +66,15 @@ const useFirebase = () => {
 
 	useEffect(() => {
 		setLoading(true);
-		fetch(`https://warm-everglades-86259.herokuapp.com/api/users/${user?.uid}`)
-			.then((res) => res.json())
-			.then((data) => setDatabaseUser(data))
-			.catch((err) => console.log(err))
-			.finally(() => {
-				setLoading(false);
-			});
+		if (user) {
+			fetch(`https://warm-everglades-86259.herokuapp.com/api/users/${user.uid}`)
+				.then((res) => res.json())
+				.then((data) => {
+					setDatabaseUser(data);
+					setLoading(false);
+				})
+				.catch((err) => console.log(err));
+		}
 	}, [user]);
 
 	return {

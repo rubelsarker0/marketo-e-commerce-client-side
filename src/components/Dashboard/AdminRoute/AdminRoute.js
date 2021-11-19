@@ -1,9 +1,16 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-
+import { Spinner } from 'react-bootstrap';
 const AdminRoute = ({ children, ...rest }) => {
-	const { databaseUser } = useAuth();
+	const { databaseUser, loading } = useAuth();
+	if (loading) {
+		return (
+			<div className="text-center mx-auto py-5">
+				<Spinner animation="border" variant="danger" />
+			</div>
+		);
+	}
 	return (
 		<Route
 			{...rest}
