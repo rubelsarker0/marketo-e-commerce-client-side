@@ -15,19 +15,18 @@ const Product = (props) => {
 					className="w-100 h-100"
 					src={productImg}
 					alt="Slip-On Formal Shoe"
-					// style={{ height: '450px' }}
 				/>
 				<Card.Body>
 					<span className="generic-text-color">{title}</span>
-					<h6 className="product-desc py-1">{description}</h6>
+					<h6 className="product-desc text-muted py-1">{description}</h6>
 					<div className="price mb-1 d-flex">
-						<h6 className="text-danger">{`$${discountPrice}`} </h6>
+						<h6 className="text-danger">{`$ ${discountPrice}`} </h6>
 						<span className="text-decoration-line-through text-secondary ms-2">
 							{`$${price}`}
 						</span>
 					</div>
 
-					<Link to={`/product/details/`}>
+					<Link to={`/product/placeOrder/${_id}`}>
 						<Button className=" generic-btn-color w-100 border-0">
 							<FontAwesomeIcon className=" me-2" icon={faLuggageCart} /> BUY NOW
 						</Button>

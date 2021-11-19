@@ -1,14 +1,19 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Row } from 'react-bootstrap';
 import ReviewCard from '../../Dashboard/GiveReview/ReviewCard';
 const Reviews = () => {
 	const [reviews, setReviews] = useState([]);
 
-	const url = `http://localhost:5000/api/reviews/all`;
-	axios.get(url).then((response) => {
-		setReviews(response);
-	});
+	useEffect(() => {
+		const url = `http://localhost:5000/api/reviews/all`;
+		axios
+			.get(url)
+			.then((response) => {
+				setReviews(response.data);
+			})
+			.catch((err) => console.log(err));
+	}, []);
 
 	return (
 		<section className="py-3">

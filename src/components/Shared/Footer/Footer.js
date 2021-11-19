@@ -10,9 +10,9 @@ const Footer = () => {
 		<footer className="footer-bg text-white py-5">
 			<Container>
 				<Row lg={3} xs={1} className="g-5">
-					<Social></Social>
 					<ContactDetails></ContactDetails>
 					<OurStores></OurStores>
+					<Social></Social>
 				</Row>
 			</Container>
 			<hr />

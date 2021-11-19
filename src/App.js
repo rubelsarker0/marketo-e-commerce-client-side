@@ -11,6 +11,7 @@ import NotFound from './components/NotFound/NotFound';
 import Login from './components/Login/Login';
 import Home from './components/Home/Home';
 import Register from './components/Register/Register';
+import PlaceOrder from './components/PlaceOrder/PlaceOrder';
 import AuthProvider from './components/AuthProvider/AuthProvider';
 import PrivateRoute, {
 	AuthenticationPrivateRoute,
@@ -35,6 +36,9 @@ function App() {
 					</Route>
 					<PrivateRoute path="/dashboard">
 						<Dashboard></Dashboard>
+					</PrivateRoute>
+					<PrivateRoute path="/product/placeOrder/:id">
+						<PlaceOrder></PlaceOrder>
 					</PrivateRoute>
 					<AuthenticationPrivateRoute path="/account/login">
 						<Login></Login>

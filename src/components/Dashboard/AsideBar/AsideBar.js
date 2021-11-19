@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Link, useRouteMatch } from 'react-router-dom';
+import { NavLink, useRouteMatch } from 'react-router-dom';
 import './AsideBar.css';
 const AsideBar = ({ width }) => {
 	let { path, url } = useRouteMatch();

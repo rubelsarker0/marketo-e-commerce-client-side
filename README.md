@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Marketo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+_Our mission is very clear - we want to provide the highest standard qualities shoes to our be loved customer._
 
-## Available Scripts
+# Our key focus
 
-In the project directory, you can run:
+- [x] Mission: Our mission at Marketo is to provide a premium quality products to our customers. Shoes is all about the comfortable feelings which always stay with us.
 
-### `npm start`
+- [x] Vision: Our vision is to become the clients’ first choice and the best shoes provider through customer satisfaction and their expectations. We strive to be the most professional and customer responsive shoes company by providing high standard shoes.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# OUR VALUES
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Our core values provide people with high standers experience .
 
-### `npm test`
+- [x] BRILLIANCE: We are committed to being a high performance company by providing the highest level of customer service. We continuously analyse our processes and ourselves in order to become the best shoes company we possibly can.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [x] AUTHENTIC: Being authentic is what has kept us standing for 100 years. We're true to our own values and ideals, regardless of the pressure that we're under to act otherwise in the shoes industry. We have genuine and honest communication through our service with our customers, partners and suppliers to ensure that all the shoes we provide are perfect.
 
-### `npm run build`
+- [x] RESPECT: We work together with our customers, employees, partners, and suppliers with respect and integrity to develop and maintain long-term, professional and win-win working relationships. We treat each other as we wish to be treated.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [x] TEAMWORK: The best solutions come from working together with colleagues, clients and suppliers. We all work together, building strong partnerships and relationships with all people impacted by or interested in our activities. Besides, we believe sharing experience, resources and opportunities is effective to achieve mutual success and ensuring that every holiday we book is the best it can be.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [x] EXPERIENCE: This is a core value for two reasons: the experience we have as a company and the experience we deliver for our clients. We're proud of our 100 years of experience designing exceptional journeys and providing value for money. It forms the basis of our decisions, and is a huge part of our continued success and growth as individuals. We are committed to create and deliver remarkable customer experience through every one of our services. We focus to offer the right products to the right customers.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [x] RELIABILITY: We are reputable and the longest established travel agency in Ireland. Since 1890, each and every one of us is committed to honesty, loyalty, and a high standard of ethical conduct
 
-### `npm run eject`
+## Technology stack used in this application
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [x] JavaScript
+- [x] React
+- [x] Bootstrap
+- [x] Font-awesome
+- [x] React-Router-dom
+- [x] firebase
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## To run this application you need follow below steps
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+> Clone the application from github using this link:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- [x] https://github.com/programming-hero-web-course1/tourism-or-delivery-website-client-side-rubelsarker0
 
-## Learn More
+# Site live url:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [x] https://walkon-d8971.web.app
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+> From the project directory run: -
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [x] npm install.
+  > Once the node_modules installed -
+- [x] run: npm start to start the application
