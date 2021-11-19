@@ -13,7 +13,10 @@ const AddProduct = () => {
 	const handleProductSubmit = (e) => {
 		e.preventDefault();
 		axios
-			.post('http://localhost:5000/api/products/create', productData)
+			.post(
+				'https://warm-everglades-86259.herokuapp.com/api/products/create',
+				productData
+			)
 			.then((res) => {
 				console.log(res.data);
 				e.target.reset();

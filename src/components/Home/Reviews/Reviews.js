@@ -6,7 +6,7 @@ const Reviews = () => {
 	const [reviews, setReviews] = useState([]);
 
 	useEffect(() => {
-		const url = `http://localhost:5000/api/reviews/all`;
+		const url = `https://warm-everglades-86259.herokuapp.com/api/reviews/all`;
 		axios
 			.get(url)
 			.then((response) => {

@@ -33,7 +33,8 @@ const Register = () => {
 					email: result.user.email,
 					uid: result.user.uid,
 				};
-				const url = 'http://localhost:5000/api/users/createUser';
+				const url =
+					'https://warm-everglades-86259.herokuapp.com/api/users/createUser';
 				axios
 					.put(url, userData)
 					.then((res) => {})
@@ -72,18 +73,16 @@ const Register = () => {
 					email: result.user.email,
 					uid: result.user.uid,
 				};
-				const url = 'http://localhost:5000/api/users/create';
+				const url =
+					'https://warm-everglades-86259.herokuapp.com/api/users/create';
 				axios
 					.post(url, userData)
-					.then((res) => {
-						console.log(res.data);
-					})
+					.then((res) => {})
 					.catch((err) => console.log(err));
 
 				setUserName(name);
 				const LoginUser = result.user;
 				setUser(LoginUser);
-				// emailVerification();
 				history.push(location.state?.from || '/home');
 				setError({});
 			})

@@ -7,7 +7,7 @@ const ManageOrders = () => {
 	const [isUpdate, setIsUpdate] = useState(false);
 	const loadManageOrders = () => {
 		axios
-			.get(`http://localhost:5000/api/orders/all`)
+			.get(`https://warm-everglades-86259.herokuapp.com/api/orders/all`)
 			.then((response) => {
 				setManageOrders(response.data);
 			})
@@ -21,19 +21,16 @@ const ManageOrders = () => {
 	const handleStatusUpdate = (id, method) => {
 		const confirm = window.confirm(`Are you sure want to ${method} order`);
 		if (confirm) {
-			const url = `http://localhost:5000/api/order/update/${method}/${id}`;
+			const url = `https://warm-everglades-86259.herokuapp.com/api/order/update/${method}/${id}`;
 			axios
 				.put(url)
 				.then((res) => {
 					setIsUpdate(!isUpdate);
-					console.log(res.data);
 				})
 				.catch((err) => console.log(err));
 		}
 	};
 
-	// /api/orders/all
-	console.log(manageOrders);
 	return (
 		<section style={{ minHeight: '600px' }}>
 			<Container className="my-5">

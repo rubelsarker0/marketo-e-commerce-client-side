@@ -37,11 +37,11 @@ Our core values provide people with high standers experience .
 
 > Clone the application from github using this link:
 
-- [x] https://github.com/programming-hero-web-course1/tourism-or-delivery-website-client-side-rubelsarker0
+- [x] https://github.com/programming-hero-web-course-4/niche-website-client-side-rubelsarker0
 
 # Site live url:
 
-- [x] https://walkon-d8971.web.app
+- [x] https://marketo-abbcc.web.app/home
 
 > From the project directory run: -
 

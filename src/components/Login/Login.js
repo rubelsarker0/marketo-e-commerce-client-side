@@ -40,7 +40,8 @@ const Login = () => {
 					uid: result.user.uid,
 				};
 
-				const url = 'http://localhost:5000/api/users/createUser';
+				const url =
+					'https://warm-everglades-86259.herokuapp.com/api/users/createUser';
 				axios
 					.put(url, userData)
 					.then((res) => {})

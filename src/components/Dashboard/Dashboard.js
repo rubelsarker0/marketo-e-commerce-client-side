@@ -15,7 +15,7 @@ const Dashboard = () => {
 
 	return (
 		<>
-			<div className="d-flex">
+			<div className="d-flex flex-sm-row">
 				<AsideBar width="25%"></AsideBar>
 
 				<div className="w-100">
@@ -44,18 +44,6 @@ const Dashboard = () => {
 						<AdminRoute path={`${path}/manage-products`}>
 							<ManageProducts></ManageProducts>
 						</AdminRoute>
-						{/* <AdminRoute path={`${path}/manageOrders`}>
-              <ManageOrders></ManageOrders>
-            </AdminRoute>
-            <AdminRoute path={`${path}/manageProducts`}>
-              <ManageProducts></ManageProducts>
-            </AdminRoute>
-            <AdminRoute path={`${path}/makeAdmin`}>
-              <MakeAdmin></MakeAdmin>
-            </AdminRoute>
-            <AdminRoute path={`${path}/addProduct`}>
-              <AddProduct></AddProduct>
-            </AdminRoute> */}
 					</Switch>
 				</div>
 			</div>

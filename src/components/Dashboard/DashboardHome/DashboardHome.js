@@ -16,7 +16,7 @@ const DashboardHome = () => {
 
 	useEffect(() => {
 		axios
-			.get('http://localhost:5000/api/products/all')
+			.get('https://warm-everglades-86259.herokuapp.com/api/products/all')
 			.then((res) => {
 				setDashBoardProducts(res.data);
 				setLoading(false);

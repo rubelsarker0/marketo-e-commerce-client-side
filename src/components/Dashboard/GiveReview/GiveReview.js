@@ -26,7 +26,7 @@ const GiveReview = () => {
 			},
 			uid: user.uid,
 		};
-		const url = `http://localhost:5000/api/reviews/create`;
+		const url = `https://warm-everglades-86259.herokuapp.com/api/reviews/create`;
 		axios
 			.post(url, reviewsData)
 			.then((res) => {

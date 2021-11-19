@@ -7,7 +7,7 @@ const ManageProducts = () => {
 
 	const loadManageProducts = () => {
 		axios
-			.get(`http://localhost:5000/api/products/all`)
+			.get(`https://warm-everglades-86259.herokuapp.com/api/products/all`)
 			.then((res) => {
 				setManageProducts(res.data);
 			})
@@ -19,13 +19,12 @@ const ManageProducts = () => {
 	}, []);
 
 	const handleDeleteProduct = (id) => {
-		const url = `http://localhost:5000/api/products/delete/${id}`;
+		const url = `https://warm-everglades-86259.herokuapp.com/api/products/delete/${id}`;
 		const confirm = window.confirm('Are you sure want to delete this product');
 		if (confirm) {
 			axios
 				.delete(url)
 				.then((res) => {
-					console.log(res.data);
 					if (res.data.deletedCount > 0) {
 						const newProducts = manageProducts.filter(
 							(manageProduct) => manageProduct._id !== id
@@ -37,7 +36,6 @@ const ManageProducts = () => {
 		}
 	};
 
-	console.log(manageProducts);
 	return (
 		<div>
 			<h3 className="generic-text-color fw-bolder m-3">Manage all products</h3>

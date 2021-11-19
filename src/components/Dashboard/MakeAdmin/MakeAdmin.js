@@ -17,7 +17,7 @@ const MakeAdmin = () => {
 
 	const handleAdminSubmit = (e) => {
 		e.preventDefault();
-		const url = `http://localhost:5000/api/admin/create/${email}`;
+		const url = `https://warm-everglades-86259.herokuapp.com/api/admin/create/${email}`;
 		axios
 			.put(url)
 			.then((res) => {

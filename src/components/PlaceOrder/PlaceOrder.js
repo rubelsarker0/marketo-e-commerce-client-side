@@ -11,17 +11,16 @@ const PlaceOrder = () => {
 	const { user } = useAuth();
 	const history = useHistory();
 	useEffect(() => {
-		const url = `http://localhost:5000/api/products/${id}`;
+		const url = `https://warm-everglades-86259.herokuapp.com/api/products/${id}`;
 		axios
 			.get(url)
 			.then((res) => setProduct(res.data))
 			.catch((err) => console.log(err));
 	}, [id]);
-	console.log(product);
 
 	const handlePlaceOrder = (e) => {
 		e.preventDefault();
-		const url = `http://localhost:5000/api/orders/create`;
+		const url = `https://warm-everglades-86259.herokuapp.com/api/orders/create`;
 		const ordersData = {
 			...address,
 			quantity: orderQuantity,
@@ -34,7 +33,6 @@ const PlaceOrder = () => {
 		axios
 			.post(url, ordersData)
 			.then((res) => {
-				console.log(res.data);
 				if (res.data.insertedId) {
 					alert('order placed successfully');
 					history.push('/dashboard/myOrders');

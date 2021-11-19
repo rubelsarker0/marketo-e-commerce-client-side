@@ -10,7 +10,7 @@ const MyOrders = () => {
 
 	const loadCustomerOrder = () => {
 		axios
-			.get(`http://localhost:5000/api/orders/${user.uid}`)
+			.get(`https://warm-everglades-86259.herokuapp.com/api/orders/${user.uid}`)
 			.then((res) => {
 				setCustomerOrders(res.data);
 			})
@@ -24,18 +24,15 @@ const MyOrders = () => {
 	const handleCancel = (id) => {
 		const confirm = window.confirm('Are you sure want to cancel order');
 		if (confirm) {
-			const url = `http://localhost:5000/api/order/update/Cancel/${id}`;
+			const url = `https://warm-everglades-86259.herokuapp.com/api/order/update/Cancel/${id}`;
 			axios
 				.put(url)
 				.then((res) => {
 					setIsUpdate(!isUpdate);
-					console.log(res.data);
 				})
 				.catch((err) => console.log(err));
 		}
 	};
-
-	console.log(customerOrders);
 
 	return (
 		<section style={{ minHeight: '600px' }}>

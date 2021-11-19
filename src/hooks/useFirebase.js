@@ -65,7 +65,7 @@ const useFirebase = () => {
 
 	useEffect(() => {
 		setLoading(true);
-		fetch(`http://localhost:5000/api/users/${user?.uid}`)
+		fetch(`https://warm-everglades-86259.herokuapp.com/api/users/${user?.uid}`)
 			.then((res) => res.json())
 			.then((data) => setDatabaseUser(data))
 			.catch((err) => console.log(err))
