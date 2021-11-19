@@ -17,6 +17,7 @@ initializeAuthentication();
 const useFirebase = () => {
 	const [user, setUser] = useState(null);
 	const [loading, setLoading] = useState(true);
+	const [databaseUser, setDatabaseUser] = useState({});
 
 	const auth = getAuth();
 	const googleProvider = new GoogleAuthProvider();
@@ -62,9 +63,21 @@ const useFirebase = () => {
 		});
 	}, [auth]);
 
+	useEffect(() => {
+		setLoading(true);
+		fetch(`http://localhost:5000/api/users/${user?.uid}`)
+			.then((res) => res.json())
+			.then((data) => setDatabaseUser(data))
+			.catch((err) => console.log(err))
+			.finally(() => {
+				setLoading(false);
+			});
+	}, [user]);
+
 	return {
 		user,
 		setUser,
+		databaseUser,
 		handleGoogleSignIn,
 		logOut,
 		handleGithubSignIn,

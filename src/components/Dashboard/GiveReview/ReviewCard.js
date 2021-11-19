@@ -3,7 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { Card, Col } from 'react-bootstrap';
 
-const ReviewCard = () => {
+const ReviewCard = (props) => {
+	console.log(props.review);
 	return (
 		<>
 			<Col className="mb-5 mb-lg-0">
